@@ -1,0 +1,15 @@
+# A Docker file that's ubuntu with WGET 
+
+FROM ubuntu:14.04
+
+RUN apt-get update
+
+RUN apt-get install -y wget curl telnet nmap
+
+ADD load.py /load.py
+ADD top_1000.txt /top_1000.txt
+ADD serve.py /serve.py
+ADD port_scan.sh /port_scan.sh
+
+
+
